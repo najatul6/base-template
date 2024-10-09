@@ -1,7 +1,7 @@
 
 const Register = () => {
   return (
-    <div>Register</div>
+    <div className="min-h-screen flex justify-center items-center">Register</div>
   )
 }
 

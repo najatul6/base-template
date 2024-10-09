@@ -1,7 +1,7 @@
 
 const Service = () => {
   return (
-    <div>Service</div>
+    <div className="min-h-screen flex justify-center items-center">Service</div>
   )
 }
 
