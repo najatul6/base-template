@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom"
 
-const Router = createBrowserRouter([
+const Routes = createBrowserRouter([
     {
         path:"/",
         element:
@@ -8,4 +8,4 @@ const Router = createBrowserRouter([
 ])
 
 
-export default Router
+export default Routes
