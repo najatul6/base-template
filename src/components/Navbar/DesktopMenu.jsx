@@ -16,7 +16,7 @@ const DesktopMenu = ({ menu }) => {
           <ChevronDown className="mt-[0.6px] group-hover/link:rotate-180 duration-200" />
         )}
         {hasSubMenu && (
-          <div>
+          <div className="sub-menu">
             <div>
               {menu?.subMenu?.map((subMenu, idx) => (
                 <div key={idx} className="">
@@ -37,6 +37,19 @@ const DesktopMenu = ({ menu }) => {
       </NavLink>
     </li>
   );
+};
+
+DesktopMenu.propTypes = {
+  menu: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    subMenu: PropTypes.arrayOf(
+      PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        desc: PropTypes.string.isRequired,
+        icon: PropTypes.elementType,
+      })
+    ),
+  }).isRequired,
 };
 
 export default DesktopMenu;
