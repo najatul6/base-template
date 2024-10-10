@@ -1,7 +1,9 @@
 
 const Navbar = () => {
   return (
-    <div>Navbar</div>
+    <nav className="px-3.5 flex-center-between w-full max-w-7xl mx-auto">
+
+    </nav>
   )
 }
 
