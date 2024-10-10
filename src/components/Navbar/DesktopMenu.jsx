@@ -8,7 +8,7 @@ const DesktopMenu = ({ menu }) => {
   return (
     <li>
       <NavLink
-        to={menu?.name}
+        to={`${menu?.name === "Home" ? "/" : menu?.name}`}
         className="flex-center gap-1 px-3 py-1 cursor-pointer rounded-xl hover:bg-white/5"
       >
         {menu?.name}

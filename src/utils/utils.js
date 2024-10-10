@@ -20,6 +20,9 @@ import { PanelTop } from "lucide-react";
 
 export const Menus = [
   {
+    name:"Home",
+  },
+  {
     name: "Features",
     subMenuHeading: ["Design", "Scale"],
     subMenu: [
