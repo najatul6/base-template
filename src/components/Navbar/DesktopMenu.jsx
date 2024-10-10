@@ -17,7 +17,15 @@ const DesktopMenu = ({ menu }) => {
         )}
         {hasSubMenu && (
           <div className="sub-menu">
-            <div>
+            <div
+              className={`grid gap-7 ${
+                menu.gridCols === 3
+                  ? "grid-cols-3"
+                  : menu.gridCols === 2
+                  ? "grid-cols-2"
+                  : "grid-cols-1"
+              }`}
+            >
               {menu?.subMenu?.map((subMenu, idx) => (
                 <div key={idx} className="relative cursor-pointer">
                   <div className="flex-center gap-x-4 group/menuBox">
