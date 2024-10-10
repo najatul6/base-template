@@ -19,9 +19,9 @@ const DesktopMenu = ({ menu }) => {
           <div className="sub-menu">
             <div>
               {menu?.subMenu?.map((subMenu, idx) => (
-                <div key={idx} className="">
-                  <div className="flex-center gap-x-4">
-                    <div className="bg-white/5 w-fit p-2 rounded-md">
+                <div key={idx} className="relative cursor-pointer">
+                  <div className="flex-center gap-x-4 group/menuBox">
+                    <div className="bg-white/5 w-fit p-2 rounded-md group-hover/menuBox:bg-white group-hover/menuBox:text-gray-900">
                       {subMenu?.icon && <subMenu.icon />}
                     </div>
                     <div>
