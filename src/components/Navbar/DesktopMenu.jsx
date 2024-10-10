@@ -1,8 +1,17 @@
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
-const DesktopMenu = () => {
+const DesktopMenu = ({menu}) => {
   return (
-    <div>DesktopMenu</div>
+    <li>
+        <Link to={menu.name}>{menu?.name}</Link>
+    </li>
   )
 }
+
+menu.propTypes={
+  
+}
+
 
 export default DesktopMenu
