@@ -19,7 +19,7 @@ body {
   .flex-center {
     @apply flex items-center;
   }
-  .flex-between {
+  .flex-center-between {
     @apply flex justify-between items-center;
   }
 }
