@@ -13,7 +13,7 @@ const Navbar = () => {
           </div>
           {/* Menus section  */}
           {/* Desktop section  */}
-          <ul className="flex-center">
+          <ul className="lg:flex-center hidden gap-x-1">
             {Menus.map((menu) => (
               <DesktopMenu menu={menu} key={menu?.name} />
             ))}
