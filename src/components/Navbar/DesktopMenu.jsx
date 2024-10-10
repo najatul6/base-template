@@ -20,13 +20,13 @@ const DesktopMenu = ({ menu }) => {
             <div>
               {menu?.subMenu?.map((subMenu, idx) => (
                 <div key={idx} className="">
-                  <div>
-                    <div>
-                      {subMenu?.icon && <subMenu.icon className="w-4 h-4" />}
+                  <div className="flex-center gap-x-4">
+                    <div className="bg-white/5 w-fit p-2 rounded-md">
+                      {subMenu?.icon && <subMenu.icon />}
                     </div>
                     <div>
-                      <h6>{subMenu?.name}</h6>
-                      <p>{subMenu?.desc}</p>
+                      <h6 className="font-semibold">{subMenu?.name}</h6>
+                      <p className="text-sm text-gray-400">{subMenu?.desc}</p>
                     </div>
                   </div>
                 </div>
