@@ -145,6 +145,9 @@ export const Menus = [
     gridCols: 2,
   },
   {
+    name: "About",
+  },
+  {
     name: "Pricing",
   },
   {

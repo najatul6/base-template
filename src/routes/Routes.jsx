@@ -7,6 +7,11 @@ import Home from "../pages/Home/Home"
 import About from "../pages/About/About"
 import Service from "../pages/Service/Service"
 import Contact from "../pages/Contact/Contact"
+import Features from "../pages/Features/Features"
+import Pricing from "../pages/Pricing/Pricing"
+import Enterprise from "../pages/Enterprise/Enterprise"
+import Resources from "../pages/Resources/Resources"
+import Support from "../pages/Support/Support"
 
 const Routes = createBrowserRouter([
     {
@@ -19,17 +24,33 @@ const Routes = createBrowserRouter([
                 element:<Home/>
             },
             {
-                path:"/about",
+                path:"Features",
+                element:<Features/>
+            },
+            {
+                path:"Resources",
+                element:<Resources/>
+            },
+            {
+                path:"Support",
+                element:<Support/>
+            },
+            {
+                path:"Enterprise",
+                element:<Enterprise/>
+            },
+            {
+                path:"About",
                 element:<About/>
             },
             {
-                path:"/services",
-                element:<Service/>
+                path:"Contact",
+                element:<Contact/>
             },
             {
-                path:"/contact",
-                element:<Contact/>
-            }
+                path:"Pricing",
+                element:<Pricing/>
+            },
         ]
     },
     {
