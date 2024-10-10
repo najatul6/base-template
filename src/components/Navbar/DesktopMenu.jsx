@@ -19,9 +19,9 @@ const DesktopMenu = ({ menu }) => {
           <div className="sub-menu">
             <div
               className={`grid gap-7 ${
-                menu.gridCols === 3
+                menu?.gridCols === 3
                   ? "grid-cols-3"
-                  : menu.gridCols === 2
+                  : menu?.gridCols === 2
                   ? "grid-cols-2"
                   : "grid-cols-1"
               }`}
@@ -49,7 +49,9 @@ const DesktopMenu = ({ menu }) => {
 
 DesktopMenu.propTypes = {
   menu: PropTypes.shape({
+    gridCols: PropTypes.number,
     name: PropTypes.string.isRequired,
+    icon: PropTypes.elementType,
     subMenu: PropTypes.arrayOf(
       PropTypes.shape({
         name: PropTypes.string.isRequired,
@@ -57,7 +59,8 @@ DesktopMenu.propTypes = {
         icon: PropTypes.elementType,
       })
     ),
-  }).isRequired,
+  }),
+  
 };
 
 export default DesktopMenu;
