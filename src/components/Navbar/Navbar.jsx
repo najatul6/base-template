@@ -18,6 +18,14 @@ const Navbar = () => {
               <DesktopMenu menu={menu} key={menu?.name} />
             ))}
           </ul>
+          <div className="flex-center gap-x-5">
+            <button
+            className="bg-white/5 z-[999] relative px-3 py-1.5 shadow rounded-xl flex-center"
+            >
+              Sign In
+            </button>
+
+          </div>
         </nav>
       </header>
     </div>
