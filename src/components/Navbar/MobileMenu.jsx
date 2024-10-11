@@ -5,6 +5,7 @@ import {motion}from "framer-motion"
 const MobileMenu = ({ Menus }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [clicked, setClicked] = useState(null);
+//   toggle Drawer
   const toggleDrawer = () => {
     setIsOpen(!isOpen);
   };
