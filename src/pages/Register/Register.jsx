@@ -1,5 +1,4 @@
 import { useState } from "react";
-import {motion} from "framer-motion"
 
 const Register = () => {
   const [isActive, setIsActive] = useState(false);
@@ -47,94 +46,35 @@ const Register = () => {
     //     </div>
     //   </div>
     // </div>
-    <div className="min-h-screen flex justify-center items-center">
-    <motion.div
-      className="w-10/12 min-h-[600px] flex justify-center rounded-xl overflow-hidden bg-white/10 shadow-xl shadow-white/10"
-      initial={false}
-      animate={{ flexDirection: isActive ? "row" : "row-reverse" }}
-      transition={{ duration: 1.5, ease: "easeInOut" }}  
-    >
-      {/* Inputs Section */}
-      <motion.div
-        className="w-4/5 flex justify-center items-center"
-        initial={false}
-        animate={{ left: isActive ? "0%" : "60%" }}
-        transition={{ duration: 1.5, ease: "easeInOut" }}  
-      >
+    <div className="min-h-screen flex justify-center items-center ">
+    <div className={`w-10/12 min-h-[600px] flex justify-center rounded-xl overflow-hidden bg-white/10 shadow-xl shadow-white/10 ${isActive? "flex-row":"flex-row-reverse"}`}>
+      <div className=" w-4/5 flex justify-center items-center">
         {isActive ? (
           <div>
             <p>Log in inputs</p>
           </div>
         ) : (
           <div>
-            <p>Register inputs</p>
+            <p>Register in inputs</p>
           </div>
         )}
-      </motion.div>
-
-      {/* Text Section */}
-      <motion.div
-        className="bg-red-400 w-3/5 flex justify-center items-center"
-        initial={false}
-        animate={{ left: isActive ? "60%" : "0%" }}
-        transition={{ duration: 1.5, ease: "easeInOut" }}  
-      >
+      </div>
+      <div className={`bg-red-400 w-3/5 flex justify-center items-center ${isActive?" rounded-s-full":"rounded-e-full"} `}>
         {isActive ? (
-          <div>
-            <p>Log in text</p>
+          <div className="">
+            <p> Log in text</p>
             <button onClick={toggleActive}>click</button>
           </div>
         ) : (
           <div>
-            <p>Register text</p>
+            <p>Register in text</p>
             <button onClick={toggleActive}>click</button>
           </div>
         )}
-      </motion.div>
-    </motion.div>
+      </div>
+    </div>
   </div>
-
-    // <div className="min-h-screen flex justify-center items-center">
-    //   <div
-    //     className={`w-10/12 min-h-[600px] flex justify-center items-center rounded-xl overflow-hidden bg-white/10 shadow-xl shadow-white/10 transition-all duration-500`}
-    //   >
-    //     {/* Left Side (Text) */}
-    //     <div
-    //       className={`w-3/5 h-full bg-red-400 flex justify-center items-center transition-all duration-500 ${
-    //         isActive ? "order-2 rounded-s-full" : "order-1 rounded-e-full"
-    //       }`}
-    //     >
-    //       {isActive ? (
-    //         <div>
-    //           <p>Log in text</p>
-    //           <button onClick={toggleActive}>Switch to Register</button>
-    //         </div>
-    //       ) : (
-    //         <div>
-    //           <p>Register text</p>
-    //           <button onClick={toggleActive}>Switch to Log in</button>
-    //         </div>
-    //       )}
-    //     </div>
-
-    //     {/* Right Side (Inputs) */}
-    //     <div
-    //       className={`w-4/5 h-full flex justify-center items-center transition-all duration-500 ${
-    //         isActive ? "order-1" : "order-2"
-    //       }`}
-    //     >
-    //       {isActive ? (
-    //         <div>
-    //           <p>Log in inputs</p>
-    //         </div>
-    //       ) : (
-    //         <div>
-    //           <p>Register inputs</p>
-    //         </div>
-    //       )}
-    //     </div>
-    //   </div>
-    // </div>
+    
   );
 };
 
