@@ -1,7 +1,19 @@
+import { Menu, X } from "lucide-react"
+import { useState } from "react"
 
-const MobileMenu = () => {
+const MobileMenu = ({Menus}) => {
+    const [isOpen,setIsOpen]=useState(false)
+    const toggleDrawer=()=>{
+        setIsOpen(!isOpen)
+    }
   return (
-    <div>MobileMenu</div>
+    <div>
+        <button onClick={toggleDrawer}>
+            {
+                isOpen ? <X/>:<Menu/>
+            }
+        </button>
+    </div>
   )
 }
 
