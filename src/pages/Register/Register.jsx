@@ -16,10 +16,7 @@ const Register = () => {
       <input type="submit" />
     </form>
 
-    <p>Create an accoutn</p>
-    <p>Create an accoutn</p>
-    <p>Create an accoutn</p>
-    <p>Create an accoutn</p>
+   
     </div>
   );
 };
