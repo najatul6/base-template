@@ -32,4 +32,7 @@ body {
   .btn-ctm {
     @apply bg-[#512da8] py-[10px] px-[45px] font-semibold uppercase mt-[10px] cursor-pointer rounded-lg border border-transparent;
   }
+  .input{
+    @apply border-none px-[15px] py-[10px] rounded-lg w-full outline-none bg-white/5
+  }
 }

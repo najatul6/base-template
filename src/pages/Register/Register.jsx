@@ -6,9 +6,9 @@ const Register = () => {
         <div className="form-container signUp">
           <form className="flex-center-item-col">
             <h1>Create an account</h1>
-            <input type="text" name="" id="" placeholder="UserName" />
-            <input type="email" name="" id="" placeholder="Email" />
-            <input type="password" name="" id="" placeholder="Password" />
+            <input className="input my-2" type="text" name="" id="" placeholder="UserName" />
+            <input className="input my-2" type="email" name="" id="" placeholder="Email" />
+            <input className="input my-2" type="password" name="" id="" placeholder="Password" />
             <button className="btn-ctm">sign up</button>
           </form>
         </div>
@@ -17,8 +17,8 @@ const Register = () => {
         <div className="form-container signUp">
           <form className="flex-center-item-col">
             <h1>Log In</h1>
-            <input type="text" name="" id="" placeholder="UserName" />
-            <input type="password" name="" id="" placeholder="Password" />
+            <input className="input my-2" type="text" name="" id="" placeholder="UserName" />
+            <input className="input my-2" type="password" name="" id="" placeholder="Password" />
             <a href="#">Forget Password</a>
             <button className="btn-ctm">sign In</button>
           </form>
