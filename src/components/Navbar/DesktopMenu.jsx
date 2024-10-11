@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { ChevronDown, Rotate3D } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import { motion } from "framer-motion";
