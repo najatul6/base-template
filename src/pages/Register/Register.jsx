@@ -1,42 +1,22 @@
-import Select from "react-select"
-import { useForm, Controller } from "react-hook-form"
-import { Input } from "@material-ui/core"
+import { useForm } from "react-hook-form";
 
 const Register = () => {
-  const { control, handleSubmit } = useForm({
-    defaultValues: {
-      firstName: "",
-      select: {},
-    },
-  })
-  const onSubmit = (data) => console.log(data)
+  const { register, handleSubmit } = useForm();
+  const onSubmit = (data) => console.log(data);
+
   return (
     <div>
-     <form onSubmit={handleSubmit(onSubmit)}>
-      <Controller
-        name="firstName"
-        control={control}
-        render={({ field }) => <Input {...field} />}
-      />
-      <Controller
-        name="select"
-        control={control}
-        render={({ field }) => (
-          <Select
-            {...field}
-            options={[
-              { value: "chocolate", label: "Chocolate" },
-              { value: "strawberry", label: "Strawberry" },
-              { value: "vanilla", label: "Vanilla" },
-            ]}
-          />
-        )}
-      />
-      <input type="submit" />
-    </form>
-
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <input {...register("firstName")} />
+        <select {...register("gender")}>
+          <option value="female">female</option>
+          <option value="male">male</option>
+          <option value="other">other</option>
+        </select>
+        <input type="submit" />
+      </form>
     </div>
-  )
-}
+  );
+};
 
-export default Register
+export default Register;
