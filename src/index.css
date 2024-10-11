@@ -11,7 +11,7 @@ body {
 
 @layer components {
   .sub-menu {
-    @apply absolute top-[4.2rem] p-[15px] rounded-[6px] origin-[50%_-170px] backdrop-blur bg-white/[0.04]
+    @apply absolute top-[4.2rem] p-[15px] rounded-[6px] origin-[50%_-170px] backdrop-blur bg-white/[0.04];
   }
 }
 
@@ -22,5 +22,14 @@ body {
   }
   .flex-center-between {
     @apply flex justify-between items-center;
+  }
+  .flex-center-item-col {
+    @apply flex flex-col justify-center items-center;
+  }
+  .flex-center-item-row {
+    @apply flex justify-center items-center;
+  }
+  .btn-ctm {
+    @apply bg-[#512da8] py-[10px] px-[45px] font-semibold uppercase mt-[10px] cursor-pointer rounded-lg border border-transparent;
   }
 }
