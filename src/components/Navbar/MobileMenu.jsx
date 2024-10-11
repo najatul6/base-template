@@ -8,6 +8,7 @@ const MobileMenu = ({ Menus }) => {
   //   toggle Drawer
   const toggleDrawer = () => {
     setIsOpen(!isOpen);
+    setClicked(null);
   };
 
 //   toggle subMenu item
@@ -53,7 +54,11 @@ exit:{
                   )}
                 </span>
                 {hasSubMenu && (
-                  <motion.ul className="ml-5">
+                  <motion.ul 
+                  initial="exit"
+                  animate={isClicked? "enter" : "exit"}
+                  variants={subMenuDrawer}
+                  className="ml-5">
                     {subMenu.map(({ name, icon: Icon }) => (
                       <li
                         key={name}
