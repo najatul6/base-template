@@ -1,7 +1,11 @@
 
 const Register = () => {
   return (
-    <div className="min-h-screen flex justify-center items-center">Register</div>
+    <div>
+      <form>
+        <h1>Create an Account</h1>
+      </form>
+    </div>
   )
 }
 

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Logo from "../../assets/bird-animals-leaf-logo.png";
 import { Menus } from "../../utils/utils";
 import DesktopMenu from "./DesktopMenu";
@@ -20,11 +21,13 @@ const Navbar = () => {
             ))}
           </ul>
           <div className="flex-center gap-x-5">
+          <Link to="/logIn">
             <button
             className="bg-white/5 z-[999] relative px-3 py-1.5 shadow rounded-xl flex-center"
             >
               Sign In
             </button>
+            </Link>
             {/* Mobile Menu  */}
             <div className="lg:hidden">
               <MobileMenu Menus={Menus}/>
