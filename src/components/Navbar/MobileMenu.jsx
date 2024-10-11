@@ -1,6 +1,7 @@
 import { ChevronDown, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import PropTypes from "prop-types";
 
 const MobileMenu = ({ Menus }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -77,6 +78,20 @@ exit:{
       </motion.div>
     </div>
   );
+};
+
+MobileMenu.propTypes = {
+    Menus: PropTypes.arrayOf(
+      PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        subMenu: PropTypes.arrayOf(
+          PropTypes.shape({
+            name: PropTypes.string.isRequired,
+            icon: PropTypes.elementType.isRequired,
+          })
+        ),
+      })
+    ),
 };
 
 export default MobileMenu;
