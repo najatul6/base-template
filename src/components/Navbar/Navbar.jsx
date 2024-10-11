@@ -1,6 +1,7 @@
 import Logo from "../../assets/bird-animals-leaf-logo.png";
 import { Menus } from "../../utils/utils";
 import DesktopMenu from "./DesktopMenu";
+import MobileMenu from "./MobileMenu";
 const Navbar = () => {
   return (
     <div>
@@ -24,7 +25,10 @@ const Navbar = () => {
             >
               Sign In
             </button>
-
+            {/* Mobile Menu  */}
+            <div className="lg:hidden">
+              <MobileMenu Menus={Menus}/>
+            </div>
           </div>
         </nav>
       </header>
