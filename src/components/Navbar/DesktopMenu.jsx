@@ -32,7 +32,7 @@ const DesktopMenu = ({ menu }) => {
   // Check if menu has sub-menu items
   const hasSubMenu = menu?.subMenu?.length > 0;
   return (
-    <motion.li className="group/link">
+    <motion.li className="group/link" onHoverStart={toggleHover} onHoverEnd={toggleHover}> 
       <NavLink
         to={`${menu?.name === "Home" ? "/" : menu?.name}`}
         className="flex-center gap-1 px-3 py-1 cursor-pointer rounded-xl hover:bg-white/5"
