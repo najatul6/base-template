@@ -1,22 +1,32 @@
-import { useForm } from "react-hook-form";
 
 const Register = () => {
-  const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data);
+ 
 
   return (
     <div>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <label> Name</label>
-      <input {...register("firstName", { required: true, maxLength: 20 })} />
-        <label> Name</label>
-      <input {...register("lastName", { pattern: /^[A-Za-z]+$/i })} />
-        <label> Name</label>
-      <input type="number" {...register("age", { min: 18, max: 99 })} />
-      <input type="submit" />
-    </form>
-create now
-   
+
+    {/* Sign UP  */}
+    <div className="form-container signUp">
+      <form action="">
+        <h1>Create an account</h1>
+        <input type="text" name="" id="" placeholder="UserName" />
+        <input type="email" name="" id=""  placeholder="Email"/>
+        <input type="password" name="" id="" placeholder="Password" />
+        <button>sign up</button>
+      </form>
+    </div>
+    
+    {/* Sign IN  */}
+    <div className="form-container signUp">
+      <form action="">
+        <h1>Log In</h1>
+        <input type="text" name="" id="" placeholder="UserName" />
+        <input type="password" name="" id="" placeholder="Password" />
+        <a href="#">Forget Password</a>
+        <button>sign In</button>
+      </form>
+    </div>
+    {/* toggle container */}
     </div>
   );
 };
