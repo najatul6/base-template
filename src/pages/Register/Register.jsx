@@ -15,7 +15,7 @@ const Register = () => {
       <input type="number" {...register("age", { min: 18, max: 99 })} />
       <input type="submit" />
     </form>
-
+create now
    
     </div>
   );
