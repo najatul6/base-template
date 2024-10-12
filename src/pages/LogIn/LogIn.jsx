@@ -3,21 +3,17 @@ import avatar from "../../assets/avatar.svg";
 import bg from "../../assets/userImg.svg";
 const LogIn = () => {
   return (
-    <div className=" min-h-screen ">
-      <div className="">
-        <div className="relative border">
-          <img className="border" src={wave} />
-          <div className="absolute w-1/3 top-[20%] right-0 bottom-0 border flex justify-center items-center">
-          <img src={bg} className="w-full" />
-          </div>
-        </div>
-      </div>
-      {/* <div className="flex justify-center items-center min-h-screen">
-        <div className=" flex justify-center items-center  gap-6 w-6/12 h-[640px] bg-white/5 rounded-xl backdrop-blur shadow-xl">
-          <div className="login-content">
-            <form>
+    <div className=" min-h-screen overflow-hidden relative">
+      <img className="fixed" src={wave} />
+
+      {/* form  */}
+      <div className="flex justify-center items-center min-h-screen">
+        {/* <img src={bg} className="w-full" /> */}
+        <div className=" flex justify-center items-center  gap-6 w-6/12 h-[640px] bg-white/10 rounded-xl backdrop-blur-lg shadow-xl">
+          <div className="w-full">
+            <form className="flex flex-col justify-center items-center gap-6 border">
               <img src={avatar} className="rounded-full w-[100px]" />
-              <h2 className="title">Welcome</h2>
+              <h2 className="lg:text-3xl text-xl uppercase font-bold tex">Welcome</h2>
               <div className="input-div one">
                 <div className="i">
                   <i className="fas fa-user"></i>
@@ -41,7 +37,7 @@ const LogIn = () => {
             </form>
           </div>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };
