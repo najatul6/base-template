@@ -6,10 +6,11 @@ const Register = () => {
   return (
     <div className="flex justify-center items-center min-h-screen bg-white/10">
       <div className="relative bg-white/5 rounded-lg shadow-lg w-[678px] max-w-full min-h-[400px] overflow-hidden">
+        {/* Sign Up Form */}
         <div
-          className={`absolute top-0 left-0 h-full transition-all duration-700 ease-in-out w-1/2 ${
-            signIn ? "opacity-0 z-10 translate-x-full" : "opacity-100 z-20"
-          }`}
+          className={`absolute top-0 left-0 h-full transition-all duration-700 ease-in-out w-full transform ${
+            signIn ? "opacity-0 -translate-x-full" : "opacity-100 translate-x-0"
+          } z-10`}
         >
           <form className="bg-white/5 flex flex-col items-center justify-center px-12 h-full text-center">
             <h1 className="text-2xl font-bold mb-4">Create Account</h1>
@@ -34,10 +35,11 @@ const Register = () => {
           </form>
         </div>
 
+        {/* Sign In Form */}
         <div
-          className={`absolute top-0 left-0 h-full transition-all duration-700 ease-in-out w-1/2 ${
-            signIn ? "opacity-100 z-20" : "opacity-0 z-10 translate-x-full"
-          }`}
+          className={`absolute top-0 left-0 h-full transition-all duration-700 ease-in-out w-full transform ${
+            signIn ? "opacity-100 translate-x-0" : "opacity-0 translate-x-full"
+          } z-20`}
         >
           <form className="bg-white/5 flex flex-col items-center justify-center px-12 h-full text-center">
             <h1 className="text-2xl font-bold mb-4">Sign In</h1>
@@ -60,47 +62,36 @@ const Register = () => {
           </form>
         </div>
 
+        {/* Overlay Panels */}
         <div
-          className={`absolute top-0 left-1/2 w-1/2 h-full overflow-hidden transition-transform duration-700 ease-in-out z-30 ${
-            signIn ? "" : "transform -translate-x-full"
-          }`}
+          className="absolute top-0 left-0 w-full h-full flex transition-transform duration-700 ease-in-out z-30"
+          style={{ transform: signIn ? "translateX(0)" : "translateX(-100%)" }}
         >
-          <div
-            className={`bg-gradient-to-r from-red-500 to-pink-500 text-white absolute left-[-100%] h-full w-[200%] transform transition-transform duration-700 ease-in-out ${
-              signIn ? "" : "translate-x-1/2"
-            }`}
-          >
-            <div
-              className={`absolute flex flex-col items-center justify-center px-10 text-center top-0 h-full w-1/2 transform ${
-                signIn ? "-translate-x-1/5" : "translate-x-0"
-              } transition-transform duration-700 ease-in-out`}
-            >
-              <h1 className="text-2xl font-bold">Welcome Back!</h1>
-              <p className="text-sm font-light leading-5 tracking-wider mb-6">
-                To keep connected with us please login with your personal info
-              </p>
-              <button
-                onClick={() => toggle(true)}
-                className="bg-transparent border border-white text-white py-3 px-10 rounded-full transition-transform transform active:scale-95 uppercase"
-              >
-                Sign In
-              </button>
-            </div>
-
-            <div
-              className={`absolute flex flex-col items-center justify-center px-10 text-center top-0 h-full w-1/2 right-0 transform ${
-                signIn ? "translate-x-0" : "translate-x-1/5"
-              } transition-transform duration-700 ease-in-out`}
-            >
+          <div className="w-1/2 flex items-center justify-center bg-gradient-to-r from-red-500 to-pink-500 text-white p-10">
+            <div className="text-center">
               <h1 className="text-2xl font-bold">Hello, Friend!</h1>
               <p className="text-sm font-light leading-5 tracking-wider mb-6">
-                Enter your personal details and start your journey with us
+                Enter your personal details and start your journey with us.
               </p>
               <button
                 onClick={() => toggle(false)}
                 className="bg-transparent border border-white text-white py-3 px-10 rounded-full transition-transform transform active:scale-95 uppercase"
               >
                 Sign Up
+              </button>
+            </div>
+          </div>
+          <div className="w-1/2 flex items-center justify-center bg-gradient-to-r from-pink-500 to-red-500 text-white p-10">
+            <div className="text-center">
+              <h1 className="text-2xl font-bold">Welcome Back!</h1>
+              <p className="text-sm font-light leading-5 tracking-wider mb-6">
+                To keep connected with us, please log in with your personal info.
+              </p>
+              <button
+                onClick={() => toggle(true)}
+                className="bg-transparent border border-white text-white py-3 px-10 rounded-full transition-transform transform active:scale-95 uppercase"
+              >
+                Sign In
               </button>
             </div>
           </div>
