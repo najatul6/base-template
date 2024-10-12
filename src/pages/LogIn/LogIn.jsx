@@ -3,15 +3,16 @@ import avatar from "../../assets/avatar.svg";
 import bg from "../../assets/userImg.svg";
 const LogIn = () => {
   return (
-    <>
-      <img className="fixed bottom-0 left-0 h-full z-[1]" src={wave} />
-      <div className="w-screen h-screen grid grid-cols-2 gap-[7rem] px-[2rem]">
-        <div className="img">
+    <div className="overflow-hidden min-h-screen relative ">
+      <img className="fixed bottom-0 left-0 -z-10" src={wave} />
+      <div className="flex justify-center items-center min-h-screen">
+        <div className="border flex justify-center items-center bg-white/5 rounded-xl backdrop-blur shadow-xl">
+        <div className="">
           <img src={bg} />
         </div>
-        <div className="login-content">
+        <div className="login-content border">
           <form>
-            <img src={avatar} className="rounded-full" />
+            <img src={avatar} className="rounded-full w-[100px]" />
             <h2 className="title">Welcome</h2>
             <div className="input-div one">
               <div className="i">
@@ -35,8 +36,9 @@ const LogIn = () => {
             <input type="submit" className="btn" value="Login" />
           </form>
         </div>
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 
