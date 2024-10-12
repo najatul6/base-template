@@ -8,7 +8,10 @@ export default {
     extend: {
       fontFamily:{
         inter:["Inter","sans-serif"]
-      }
+      },
+      backgroundImage: {
+        'custom-bg': "url('./src/assets/background.svg')",
+      },
     },
     screens:{
       lg:{min:"925px"},
