@@ -1,6 +1,6 @@
 import wave from "../../assets/wave.svg"
 import avatar from "../../assets/avatar.svg"
-import bg from "../../assets/online_shopping.svg"
+import bg from "../../assets/undraw_augmented_reality_re_f0qd.svg"
 const LogIn = () => {
   
 
@@ -13,7 +13,7 @@ const LogIn = () => {
 		</div>
 		<div className="login-content">
 			<form>
-				<img src={avatar}/>
+				<img src={avatar} className="rounded-full"/>
 				<h2 className="title">Welcome</h2>
            		<div className="input-div one">
            		   <div className="i">
