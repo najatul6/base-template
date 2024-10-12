@@ -1,6 +1,6 @@
 import wave from "../../assets/wave.svg"
 import avatar from "../../assets/avatar.svg"
-import bg from "../../assets/"
+import bg from "../../assets/online_shopping.svg"
 const LogIn = () => {
   
 
@@ -9,7 +9,7 @@ const LogIn = () => {
     <img className="wave" src={wave}/>
 	<div className="container">
 		<div className="img">
-			<img src="img/bg.svg"/>
+			<img src={bg}/>
 		</div>
 		<div className="login-content">
 			<form>
