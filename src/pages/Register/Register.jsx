@@ -24,8 +24,16 @@ const Register = () => {
             </div>
             <form className="space-y-6 font-[sans-serif] max-w-lg mx-auto">
               <h1 className="text-3xl text-white uppercase font-bold tracking-[0.25rem] text-center py-5">
-                Welcome
+                Cerate Account
               </h1>
+              <div className="relative flex justify-center items-center">
+                <input
+                  type="text"
+                  placeholder="Enter Full Name"
+                  className="pl-12 px-5 text-white placeholder-white py-3 bg-transparent font-semibold w-full  border-b-2 focus:border-[#1076FF] outline-none"
+                />
+                <FaUser className="w-[18px] h-[18px] absolute  left-4" />
+              </div>
               <div className="relative flex justify-center items-center">
                 <input
                   type="email"
