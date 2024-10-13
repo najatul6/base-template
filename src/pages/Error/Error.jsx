@@ -10,7 +10,7 @@ const Error = () => {
     <div className="bg-[#181181A]">
       <div className="flex flex-col min-h-screen items-center justify-center">
         <Lottie animationData={errorImg}></Lottie>
-        <Link className="bg-white/5 py-4 px-5 uppercase font-bold rounded-full flex justify-center items-center gap-4 hover:bg-white/10">
+        <Link to="/" className="bg-white/5 py-4 px-5 uppercase font-bold rounded-full flex justify-center items-center gap-4 hover:bg-white/10">
         <Home/>
         Go to home
         </Link>
