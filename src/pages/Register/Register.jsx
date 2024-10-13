@@ -6,6 +6,7 @@ import { RiLockPasswordFill } from "react-icons/ri";
 import { IoEye, IoEyeOff } from "react-icons/io5";
 import { Link } from "react-router-dom";
 const Register = () => {
+  const [isEyeOpen, setIsEyeOpen] = useState(false);
   return (
     <div>
        <img
