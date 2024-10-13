@@ -6,10 +6,11 @@ import { RiLockPasswordFill } from "react-icons/ri";
 import { IoEye, IoEyeOff } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { CgMail } from "react-icons/cg";
+
 const Register = () => {
   const [isEyeOpen, setIsEyeOpen] = useState(false);
   return (
-     <div className="h-screen overflow-hidden relative w-full">
+    <div className="h-screen overflow-hidden relative w-full">
       <img
         src={background}
         alt="background"
@@ -41,7 +42,7 @@ const Register = () => {
                   placeholder="Enter Username or Email Address"
                   className="pl-12 px-5 text-white placeholder-white py-3 bg-transparent font-semibold w-full  border-b-2 focus:border-[#1076FF] outline-none"
                 />
-                <CgMail  className="w-[18px] h-[18px] absolute  left-4" />
+                <CgMail className="w-[18px] h-[18px] absolute  left-4" />
               </div>
               <div className="relative flex justify-center items-center">
                 <input
@@ -59,7 +60,6 @@ const Register = () => {
                 </div>
               </div>
 
-
               <button
                 type="submit"
                 className="!mt-8 px-8 py-4  duration-300 text-xl uppercase font-bold text-white bg-black/25 hover:bg-white/15 shadow-inner rounded-full w-full"
@@ -69,14 +69,20 @@ const Register = () => {
             </form>
             <div className="flex justify-center py-4">
               <p>
-                Already Have an account? <Link to="/logIn" className="font-semibold tracking-[0.05rem] underline">Log in</Link>
+                Already Have an account?{" "}
+                <Link
+                  to="/logIn"
+                  className="font-semibold tracking-[0.05rem] underline"
+                >
+                  Log in
+                </Link>
               </p>
             </div>
           </div>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Register
+export default Register;
