@@ -72,7 +72,7 @@ const Register = () => {
             </form>
             <div className="flex justify-center py-4">
               <p>
-                Don&#39;t have an account? <Link to="/register" className="font-semibold tracking-[0.05rem] underline">Create an Account</Link>
+                Already Have an account? <Link to="/logIn" className="font-semibold tracking-[0.05rem] underline">Log in</Link>
               </p>
             </div>
           </div>
