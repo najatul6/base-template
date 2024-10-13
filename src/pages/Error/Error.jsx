@@ -1,6 +1,6 @@
+import errorImg from "../../assets/Error.json"
 import Lottie from "lottie-react";
 import { Link, useRouteError } from "react-router-dom";
-import errorImg from "../../assets/Error.json"
 import { Home } from "lucide-react";
 
 const Error = () => {
