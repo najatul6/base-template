@@ -1,9 +1,8 @@
-import Loading from "../../components/Loading/Loading"
 
 const About = () => {
   return (
     <div className="min-h-screen flex justify-center items-center">
-      <Loading/>
+      About Page coming soon
     </div>
   )
 }
