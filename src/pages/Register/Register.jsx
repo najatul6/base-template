@@ -59,15 +59,12 @@ const Register = () => {
                 </div>
               </div>
 
-              <div className="flex justify-end">
-                <Link>Forget Password?</Link>
-              </div>
 
               <button
                 type="submit"
                 className="!mt-8 px-8 py-4  duration-300 text-xl uppercase font-bold text-white bg-black/25 hover:bg-white/15 shadow-inner rounded-full w-full"
               >
-                Log In
+                Register
               </button>
             </form>
             <div className="flex justify-center py-4">
