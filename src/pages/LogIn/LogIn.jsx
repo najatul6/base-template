@@ -29,7 +29,7 @@ const LogIn = () => {
               <div className="relative flex justify-center items-center">
                 <input
                   type="email"
-                  placeholder="Enter Username or Email Address"
+                  placeholder="Enter Email Address"
                   className="pl-12 px-5 text-white placeholder-white py-3 bg-transparent font-semibold w-full  border-b-2 focus:border-[#1076FF] outline-none"
                 />
                 <FaUser className="w-[18px] h-[18px] absolute  left-4" />
