@@ -1,4 +1,10 @@
-import background from '../../assets/background.svg'
+import background from "../../assets/background.jpg";
+import avatar from "../../assets/avatar.svg";
+import { FaUser } from "react-icons/fa";
+import { useState } from "react";
+import { RiLockPasswordFill } from "react-icons/ri";
+import { IoEye, IoEyeOff } from "react-icons/io5";
+import { Link } from "react-router-dom";
 const Register = () => {
   return (
     <div>
