@@ -1,10 +1,10 @@
 import background from "../../assets/background.jpg";
 import avatar from "../../assets/avatar.svg";
-import { FaUser } from "react-icons/fa";
 import { useState } from "react";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { IoEye, IoEyeOff } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import { CgMail } from "react-icons/cg";
 const LogIn = () => {
   const [isEyeOpen, setIsEyeOpen] = useState(false);
   return (
@@ -32,7 +32,7 @@ const LogIn = () => {
                   placeholder="Enter Email Address"
                   className="pl-12 px-5 text-white placeholder-white py-3 bg-transparent font-semibold w-full  border-b-2 focus:border-[#1076FF] outline-none"
                 />
-                <FaUser className="w-[18px] h-[18px] absolute  left-4" />
+                <CgMail  className="w-[18px] h-[18px] absolute  left-4" />
               </div>
               <div className="relative flex justify-center items-center">
                 <input
