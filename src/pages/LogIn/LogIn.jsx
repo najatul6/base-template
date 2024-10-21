@@ -15,6 +15,8 @@ const LogIn = () => {
   } = useForm();
   const [isEyeOpen, setIsEyeOpen] = useState(false);
 
+  // Watch the value of the password field
+  const passwordValue = watch("password", "");
   const onSubmit = (data) => console.log(data);
 
   return (
@@ -63,16 +65,20 @@ const LogIn = () => {
                   <input
                     type={`${isEyeOpen ? "text" : "password"}`}
                     {...register("password", {
-                      required: "Password is required",pattern: {
+                      required: "Password is required",
+                      pattern: {
                         value: /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/,
                         message:
                           "Password must be at least 8 characters long, contain an uppercase letter, and a number",
                       },
-              
                     })}
                     aria-invalid={errors.password ? "true" : "false"}
                     placeholder="Enter Your Password"
-                    className="pl-12 text-white placeholder-white px-5 py-3 bg-transparent font-semibold w-full  border-b-2 focus:border-[#1076FF] outline-none"
+                    className={`pl-12 text-white placeholder-white px-5 py-3 bg-transparent font-semibold w-full border-b-2 focus:border-[#1076FF] outline-none ${
+                      passwordValue?.length >= 8
+                        ? "bg-green-500/20"
+                        : "bg-red-500/20"
+                    }`}
                   />
 
                   <RiLockPasswordFill className="w-[18px] h-[18px] absolute left-4" />
