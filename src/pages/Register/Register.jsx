@@ -1,25 +1,56 @@
 import background from "../../assets/background.jpg";
 import avatar from "../../assets/avatar.svg";
 import { FaUser } from "react-icons/fa";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { IoEye, IoEyeOff } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { CgMail } from "react-icons/cg";
 import { useForm } from "react-hook-form";
+import { AuthContext } from "../../providers/AuthProvider";
+import { toast } from "react-toastify";
 
 const Register = () => {
   const {
     register,
     handleSubmit,
-    watch,
+    watch,reset ,
     formState: { errors },
   } = useForm();
   const [isEyeOpen, setIsEyeOpen] = useState(false);
-  
+  const { createUser } = useContext(AuthContext);
   // Watch the value of the password field
   const passwordValue = watch("password", "");
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = async(data) => {
+    // Show a processing toast message
+    const processingToast = toast.loading("Creating Data...");
+    try {
+      // Attempt to log in the user
+      const result = await createUser(data.email, data.password);
+
+      // If login is successful, show a success message
+      reset();
+      <Navigate to="/"/>
+      toast.update(processingToast, {
+        render: "Account Created Successfully!",
+        type: "success",
+        isLoading: false,
+        autoClose: 1500,
+        closeButton: true,
+      });
+      console.log("User:", result.user);
+    } catch (error) {
+      // Show an error message if login fails
+      toast.update(processingToast, {
+        render: `${error.message}`,
+        type: "error",
+        isLoading: false,
+        autoClose: 3000,
+        closeButton: true,
+      });
+      console.error(error);
+    }
+  }
   return (
     <div className="h-screen overflow-hidden relative w-full">
       <img
