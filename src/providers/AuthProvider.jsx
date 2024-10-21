@@ -38,7 +38,7 @@ const AuthProvider = ({ children }) => {
   };
 
   // Sign in with Facebook
-  const signInwtihFacebook = ()=>{
+  const signInWithFacebook = ()=>{
     setLoading(true);
     return signInWithPopup(auth, facebookProvider);
   }
@@ -86,6 +86,13 @@ const AuthProvider = ({ children }) => {
     user,
     loading,
     createUser,
+    signInWithGoogle,
+    signInWithFacebook,
+    signInWithGithub,
+    signInWithTwitter,
+    logIn,
+    logOut,
+    resetPassword,
   };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
