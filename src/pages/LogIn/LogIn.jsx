@@ -5,8 +5,18 @@ import { RiLockPasswordFill } from "react-icons/ri";
 import { IoEye, IoEyeOff } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { CgMail } from "react-icons/cg";
+import { useForm } from "react-hook-form";
 const LogIn = () => {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
   const [isEyeOpen, setIsEyeOpen] = useState(false);
+
+  const onSubmit = (data) => console.log(data);
+
   return (
     <div className="h-screen overflow-hidden relative w-full">
       <img
@@ -22,32 +32,62 @@ const LogIn = () => {
             <div className="flex-center-item-row">
               <img src={avatar} className="rounded-full w-[100px]" />
             </div>
-            <form className="space-y-6 font-[sans-serif] max-w-lg mx-auto">
+            <form
+              onSubmit={handleSubmit(onSubmit)}
+              className="space-y-6 font-[sans-serif] max-w-lg mx-auto"
+            >
               <h1 className="text-3xl text-white uppercase font-bold tracking-[0.25rem] text-center py-5">
                 Welcome
               </h1>
-              <div className="relative flex justify-center items-center">
-                <input
-                  type="email"
-                  placeholder="Enter Email Address"
-                  className="pl-12 px-5 text-white placeholder-white py-3 bg-transparent font-semibold w-full  border-b-2 focus:border-[#1076FF] outline-none"
-                />
-                <CgMail  className="w-[18px] h-[18px] absolute  left-4" />
-              </div>
-              <div className="relative flex justify-center items-center">
-                <input
-                  type={`${isEyeOpen ? "text" : "password"}`}
-                  placeholder="Enter Your Password"
-                  className="pl-12 text-white placeholder-white px-5 py-3 bg-transparent font-semibold w-full  border-b-2 focus:border-[#1076FF] outline-none"
-                />
-
-                <RiLockPasswordFill className="w-[18px] h-[18px] absolute left-4" />
-                <div
-                  onClick={() => setIsEyeOpen(!isEyeOpen)}
-                  className="w-[18px] h-[18px] absolute right-4 cursor-pointer"
-                >
-                  {isEyeOpen ? <IoEyeOff /> : <IoEye />}
+              <div>
+                <div className="relative flex justify-center items-center">
+                  <input
+                    type="email"
+                    {...register("email", {
+                      required: "Email Address is required",
+                    })}
+                    aria-invalid={errors.email ? "true" : "false"}
+                    placeholder="Enter Email Address"
+                    className="pl-12 px-5 text-white placeholder-white py-3 bg-transparent font-semibold w-full  border-b-2 focus:border-[#1076FF] outline-none"
+                  />
+                  <CgMail className="w-[18px] h-[18px] absolute  left-4" />
                 </div>
+                {errors.email && (
+                  <p className="text-red-600" role="alert">
+                    {errors.email.message}
+                  </p>
+                )}
+              </div>
+              <div>
+                <div className="relative flex justify-center items-center">
+                  <input
+                    type={`${isEyeOpen ? "text" : "password"}`}
+                    {...register("password", {
+                      required: "Password is required",pattern: {
+                        value: /^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$/,
+                        message:
+                          "Password must be at least 8 characters long, contain an uppercase letter, and a number",
+                      },
+              
+                    })}
+                    aria-invalid={errors.password ? "true" : "false"}
+                    placeholder="Enter Your Password"
+                    className="pl-12 text-white placeholder-white px-5 py-3 bg-transparent font-semibold w-full  border-b-2 focus:border-[#1076FF] outline-none"
+                  />
+
+                  <RiLockPasswordFill className="w-[18px] h-[18px] absolute left-4" />
+                  <div
+                    onClick={() => setIsEyeOpen(!isEyeOpen)}
+                    className="w-[18px] h-[18px] absolute right-4 cursor-pointer"
+                  >
+                    {isEyeOpen ? <IoEyeOff /> : <IoEye />}
+                  </div>
+                </div>
+                {errors.password && (
+                  <p className="text-red-600" role="alert">
+                    {errors.password.message}
+                  </p>
+                )}
               </div>
 
               <div className="flex justify-end">
@@ -63,7 +103,13 @@ const LogIn = () => {
             </form>
             <div className="flex justify-center py-4">
               <p>
-                Don&#39;t have an account? <Link to="/register" className="font-semibold tracking-[0.05rem] underline">Create an Account</Link>
+                Don&#39;t have an account?{" "}
+                <Link
+                  to="/register"
+                  className="font-semibold tracking-[0.05rem] underline"
+                >
+                  Create an Account
+                </Link>
               </p>
             </div>
           </div>
