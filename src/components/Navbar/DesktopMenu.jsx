@@ -36,21 +36,26 @@ const DesktopMenu = ({ menu }) => {
   const hasSubMenu = menu?.subMenu?.length > 0;
 
   return (
-    <motion.li className="group/link" onHoverStart={toggleHover} onHoverEnd={toggleHover}>
+    <motion.li
+      className="group/link"
+      onHoverStart={toggleHover}
+      onHoverEnd={toggleHover}
+    >
       {/* NavLink with active route highlighting */}
       <NavLink
-        to={`${menu?.name === "Home" ? "/" : menu?.name}`}
+        to={menu?.path || "#"} // Use path if available, otherwise fallback
         className={({ isActive }) =>
           `flex-center gap-1 px-3 py-1 cursor-pointer rounded-xl ${
             isActive ? "bg-blue-600 text-white" : "hover:bg-white/5"
           }`
         }
+        aria-expanded={isHover}
       >
         {menu?.name}
         {hasSubMenu && (
           <ChevronDown className="mt-[0.6px] group-hover/link:rotate-180 duration-200" />
         )}
-        
+
         {/* Sub-menu that appears on hover */}
         {hasSubMenu && (
           <motion.div
@@ -70,7 +75,10 @@ const DesktopMenu = ({ menu }) => {
             >
               {menu?.subMenu?.map((subMenu, idx) => (
                 <div key={idx} className="relative cursor-pointer">
-                  <div className="flex-center gap-x-4 group/menuBox">
+                  <NavLink
+                    to={subMenu.path} // Use path from submenu
+                    className="flex-center gap-x-4 group/menuBox"
+                  >
                     <div className="bg-white/5 w-fit p-2 rounded-md group-hover/menuBox:bg-white group-hover/menuBox:text-gray-900">
                       {subMenu?.icon && <subMenu.icon />}
                     </div>
@@ -78,7 +86,7 @@ const DesktopMenu = ({ menu }) => {
                       <h6 className="font-semibold">{subMenu?.name}</h6>
                       <p className="text-sm text-gray-400">{subMenu?.desc}</p>
                     </div>
-                  </div>
+                  </NavLink>
                 </div>
               ))}
             </div>
@@ -94,11 +102,13 @@ DesktopMenu.propTypes = {
     gridCols: PropTypes.number,
     name: PropTypes.string.isRequired,
     icon: PropTypes.elementType,
+    path: PropTypes.string, // Add path prop
     subMenu: PropTypes.arrayOf(
       PropTypes.shape({
         name: PropTypes.string.isRequired,
         desc: PropTypes.string.isRequired,
         icon: PropTypes.elementType,
+        path: PropTypes.string, // Add path for subMenu items
       })
     ),
   }),
