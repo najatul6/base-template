@@ -13,6 +13,7 @@ import {
   signOut,
   TwitterAuthProvider,
 } from "firebase/auth";
+import PropTypes from "prop-types";
 
 export const AuthContext = createContext();
 const auth = getAuth(app);
@@ -98,5 +99,9 @@ const AuthProvider = ({ children }) => {
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
   );
 };
+
+AuthProvider.propTypes={
+  children: PropTypes.node.isRequired,
+}
 
 export default AuthProvider;
