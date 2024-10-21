@@ -6,9 +6,20 @@ import { RiLockPasswordFill } from "react-icons/ri";
 import { IoEye, IoEyeOff } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import { CgMail } from "react-icons/cg";
+import { useForm } from "react-hook-form";
 
 const Register = () => {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm();
   const [isEyeOpen, setIsEyeOpen] = useState(false);
+  
+  // Watch the value of the password field
+  const passwordValue = watch("password", "");
+  const onSubmit = (data) => console.log(data);
   return (
     <div className="h-screen overflow-hidden relative w-full">
       <img
@@ -24,7 +35,7 @@ const Register = () => {
             <div className="flex-center-item-row">
               <img src={avatar} className="rounded-full w-[100px]" />
             </div>
-            <form className="space-y-6 font-[sans-serif] max-w-lg mx-auto">
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 font-[sans-serif] max-w-lg mx-auto">
               <h1 className="text-3xl text-white uppercase font-bold tracking-[0.25rem] text-center py-5">
                 Cerate Account
               </h1>
