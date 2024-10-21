@@ -59,7 +59,7 @@ const DesktopMenu = ({ menu }) => {
         {/* Sub-menu that appears on hover */}
         {hasSubMenu && (
           <motion.div
-            className="sub-menu"
+            className="sub-menu  "
             initial="exit"
             animate={isHover ? "enter" : "exit"}
             variants={subMenuAnimate}

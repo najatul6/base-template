@@ -7,17 +7,17 @@ import Home from "../pages/Home/Home";
 import About from "../pages/About/About";
 import Contact from "../pages/Contact/Contact";
 import Features from "../pages/Features/Features";
-import FeatureDesign from "../pages/Features/Design"; // Create this page
-import FeatureManagement from "../pages/Features/Management"; // Create this page
-import FeatureNavigation from "../pages/Features/Navigation"; // Create this page
-import FeatureCMS from "../pages/Features/CMS"; // Create this page
 import Pricing from "../pages/Pricing/Pricing";
 import Enterprise from "../pages/Enterprise/Enterprise";
 import Resources from "../pages/Resources/Resources";
-import ResourceMarketplace from "../pages/Resources/Marketplace"; // Create this page
-import ResourceMeetups from "../pages/Resources/Meetups"; // Create this page
 import Support from "../pages/Support/Support";
-import SupportHelp from "../pages/Support/Help"; // Create this page
+import Design from "../pages/Features/Design/Design";
+import FeatureManagement from "../pages/Features/Management/FeatureManagement";
+import FeatureNavigation from "../pages/Features/Navigation/FeatureNavigation";
+import FeatureCMS from "../pages/Features/CMS/FeatureCMS";
+import ResourceMarketplace from "../pages/Resources/Marketplace/ResourceMarketplace";
+import ResourceMeetups from "../pages/Resources/Meetups/ResourceMeetups";
+import SupportHelp from "../pages/Support/Help/SupportHelp";
 
 const Routes = createBrowserRouter([
     {
@@ -35,19 +35,19 @@ const Routes = createBrowserRouter([
                 children: [
                     {
                         path: "design",
-                        element: <FeatureDesign /> // Component for Design feature
+                        element: <Design /> 
                     },
                     {
                         path: "management",
-                        element: <FeatureManagement /> // Component for Management feature
+                        element: <FeatureManagement /> 
                     },
                     {
                         path: "navigation",
-                        element: <FeatureNavigation /> // Component for Navigation feature
+                        element: <FeatureNavigation /> 
                     },
                     {
                         path: "cms",
-                        element: <FeatureCMS /> // Component for CMS feature
+                        element: <FeatureCMS /> 
                     },
                 ]
             },
@@ -57,11 +57,11 @@ const Routes = createBrowserRouter([
                 children: [
                     {
                         path: "marketplace",
-                        element: <ResourceMarketplace /> // Component for Marketplace
+                        element: <ResourceMarketplace /> 
                     },
                     {
                         path: "meetups",
-                        element: <ResourceMeetups /> // Component for Meetups
+                        element: <ResourceMeetups /> 
                     },
                 ]
             },
@@ -71,7 +71,7 @@ const Routes = createBrowserRouter([
                 children: [
                     {
                         path: "help",
-                        element: <SupportHelp /> // Component for Help
+                        element: <SupportHelp /> 
                     },
                 ]
             },

@@ -8,7 +8,7 @@ const Error = () => {
   console.log(error);
   return (
     <div className="bg-[#181181A]">
-      <div className="flex flex-col min-h-screen items-center justify-center">
+      <div className="flex flex-col min-h-screen z-10 items-center justify-center">
         <Lottie animationData={errorImg}></Lottie>
         <Link to="/" className="bg-white/5 py-4 px-5 uppercase font-bold rounded-full flex justify-center items-center gap-4 hover:bg-white/10">
         <Home/>
