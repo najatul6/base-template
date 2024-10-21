@@ -5,44 +5,60 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 
 const DesktopMenu = ({ menu }) => {
-  const [isHover,setIsHover]=useState(false);
-  const toggleHover=()=>{
-    setIsHover(!isHover);
-  }
+  const [isHover, setIsHover] = useState(false);
 
-  // Animation Varients
-  const subMenuAnimate={
-    enter:{
-      opacity:1,
-      rotateX:0,
-      transition:{
-        duration:0.5,
+  // Toggle hover state
+  const toggleHover = () => {
+    setIsHover(!isHover);
+  };
+
+  // Animation variants for submenu
+  const subMenuAnimate = {
+    enter: {
+      opacity: 1,
+      rotateX: 0,
+      transition: {
+        duration: 0.5,
       },
-      display:"block",
+      display: "block",
     },
-    exit:{
-      opacity:0,
-      rotateX:-15,
-      transition:{
-        duration:0.5,
+    exit: {
+      opacity: 0,
+      rotateX: -15,
+      transition: {
+        duration: 0.5,
       },
-      display:"none",
-    }
-  }
+      display: "none",
+    },
+  };
+
   // Check if menu has sub-menu items
   const hasSubMenu = menu?.subMenu?.length > 0;
+
   return (
-    <motion.li className="group/link" onHoverStart={toggleHover} onHoverEnd={toggleHover}> 
+    <motion.li className="group/link" onHoverStart={toggleHover} onHoverEnd={toggleHover}>
+      {/* NavLink with active route highlighting */}
       <NavLink
         to={`${menu?.name === "Home" ? "/" : menu?.name}`}
-        className="flex-center gap-1 px-3 py-1 cursor-pointer rounded-xl hover:bg-white/5"
+        className={({ isActive }) =>
+          `flex-center gap-1 px-3 py-1 cursor-pointer rounded-xl ${
+            isActive ? "bg-blue-600 text-white" : "hover:bg-white/5"
+          }`
+        }
       >
         {menu?.name}
         {hasSubMenu && (
           <ChevronDown className="mt-[0.6px] group-hover/link:rotate-180 duration-200" />
         )}
+        
+        {/* Sub-menu that appears on hover */}
         {hasSubMenu && (
-          <motion.div className="sub-menu" initial="exit" animate={isHover? "enter":"exit"} variants={subMenuAnimate}>
+          <motion.div
+            className="sub-menu"
+            initial="exit"
+            animate={isHover ? "enter" : "exit"}
+            variants={subMenuAnimate}
+          >
             <div
               className={`grid gap-7 ${
                 menu?.gridCols === 3
@@ -86,7 +102,6 @@ DesktopMenu.propTypes = {
       })
     ),
   }),
-  
 };
 
 export default DesktopMenu;
