@@ -39,6 +39,10 @@ const Register = () => {
               <div className="relative flex justify-center items-center">
                 <input
                   type="email"
+                  {...register("email", {
+                    required: "Email Address is required",
+                  })}
+                  aria-invalid={errors.email ? "true" : "false"}
                   placeholder="Enter Username or Email Address"
                   className="pl-12 px-5 text-white placeholder-white py-3 bg-transparent font-semibold w-full  border-b-2 focus:border-[#1076FF] outline-none"
                 />
