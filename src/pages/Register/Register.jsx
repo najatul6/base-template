@@ -28,25 +28,43 @@ const Register = () => {
               <h1 className="text-3xl text-white uppercase font-bold tracking-[0.25rem] text-center py-5">
                 Cerate Account
               </h1>
-              <div className="relative flex justify-center items-center">
-                <input
-                  type="text"
-                  placeholder="Enter Full Name"
-                  className="pl-12 px-5 text-white placeholder-white py-3 bg-transparent font-semibold w-full  border-b-2 focus:border-[#1076FF] outline-none"
-                />
-                <FaUser className="w-[18px] h-[18px] absolute  left-4" />
+              <div>
+                <div className="relative flex justify-center items-center">
+                  <input
+                    type="text"
+                    {...register("fullName", {
+                      required: "Email Address is required",
+                    })}
+                    aria-invalid={errors.fullName ? "true" : "false"}
+                    placeholder="Enter Full Name"
+                    className="pl-12 px-5 text-white placeholder-white py-3 bg-transparent font-semibold w-full  border-b-2 focus:border-[#1076FF] outline-none"
+                  />
+                  <FaUser className="w-[18px] h-[18px] absolute  left-4" />
+                </div>
+                {errors.fullName && (
+                  <p className="text-red-600" role="alert">
+                    {errors.fullName.message}
+                  </p>
+                )}
               </div>
-              <div className="relative flex justify-center items-center">
-                <input
-                  type="email"
-                  {...register("email", {
-                    required: "Email Address is required",
-                  })}
-                  aria-invalid={errors.email ? "true" : "false"}
-                  placeholder="Enter Username or Email Address"
-                  className="pl-12 px-5 text-white placeholder-white py-3 bg-transparent font-semibold w-full  border-b-2 focus:border-[#1076FF] outline-none"
-                />
-                <CgMail className="w-[18px] h-[18px] absolute  left-4" />
+              <div>
+                <div className="relative flex justify-center items-center">
+                  <input
+                    type="email"
+                    {...register("email", {
+                      required: "Email Address is required",
+                    })}
+                    aria-invalid={errors.email ? "true" : "false"}
+                    placeholder="Enter Username or Email Address"
+                    className="pl-12 px-5 text-white placeholder-white py-3 bg-transparent font-semibold w-full  border-b-2 focus:border-[#1076FF] outline-none"
+                  />
+                  <CgMail className="w-[18px] h-[18px] absolute  left-4" />
+                </div>
+                {errors.email && (
+                  <p className="text-red-600" role="alert">
+                    {errors.email.message}
+                  </p>
+                )}
               </div>
               <div className="relative flex justify-center items-center">
                 <input
