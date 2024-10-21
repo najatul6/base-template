@@ -17,13 +17,17 @@ const LogIn = () => {
     formState: { errors },
   } = useForm();
   const [isEyeOpen, setIsEyeOpen] = useState(false);
+
+  // Watch the value of the password field
   const passwordValue = watch("password", "");
   const { logIn } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
+
   // The path to redirect to after login, defaults to the home page if none is specified
   const from = location.state?.from?.pathname || "/";
-  // Watch the value of the password field
+
+  // Log In With Email and Password
   const onSubmit = async (data) => {
     // Show a processing toast message
     const processingToast = toast.loading("Checking User Data...");
