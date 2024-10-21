@@ -1,23 +1,59 @@
 import background from "../../assets/background.jpg";
 import avatar from "../../assets/avatar.svg";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { IoEye, IoEyeOff } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { CgMail } from "react-icons/cg";
 import { useForm } from "react-hook-form";
+import { AuthContext } from "../../providers/AuthProvider";
+import { toast } from "react-toastify";
 const LogIn = () => {
   const {
     register,
     handleSubmit,
     watch,
+    reset,
     formState: { errors },
   } = useForm();
   const [isEyeOpen, setIsEyeOpen] = useState(false);
-
-  // Watch the value of the password field
   const passwordValue = watch("password", "");
-  const onSubmit = (data) => console.log(data);
+  const { logIn } = useContext(AuthContext);
+  const location = useLocation();
+  const navigate = useNavigate();
+  // The path to redirect to after login, defaults to the home page if none is specified
+  const from = location.state?.from?.pathname || "/";
+  // Watch the value of the password field
+  const onSubmit = async (data) => {
+    // Show a processing toast message
+    const processingToast = toast.loading("Checking User Data...");
+    try {
+      // Attempt to log in the user
+      const result = await logIn(data.email, data.password);
+
+      // If login is successful, show a success message
+      reset();
+      navigate(from, { replace: true });
+      toast.update(processingToast, {
+        render: "Successfully logged in!",
+        type: "success",
+        isLoading: false,
+        autoClose: 1500,
+        closeButton: true,
+      });
+      console.log("User:", result.user);
+    } catch (error) {
+      // Show an error message if login fails
+      toast.update(processingToast, {
+        render: "Invalid email or password",
+        type: "error",
+        isLoading: false,
+        autoClose: 3000,
+        closeButton: true,
+      });
+      console.error(error);
+    }
+  };
 
   return (
     <div className="h-screen overflow-hidden relative w-full">
