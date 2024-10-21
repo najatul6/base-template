@@ -31,29 +31,24 @@ const LogIn = () => {
   const onSubmit = async (data) => {
     // Show a processing toast message
     const processingToast = toast.loading("Checking User Data...");
+
     try {
       // Attempt to log in the user
       const result = await logIn(data.email, data.password);
 
-      // If login is successful, show a success message
+      // Dismiss the processing toast and show success message
+      toast.dismiss(processingToast);
       reset();
       navigate(from, { replace: true });
-      toast.update(processingToast, {
-        render: "Successfully logged in!",
-        type: "success",
-        isLoading: false,
+      toast.success("Successfully logged in!", {
         autoClose: 1500,
-        closeButton: true,
       });
       console.log("User:", result.user);
     } catch (error) {
-      // Show an error message if login fails
-      toast.update(processingToast, {
-        render: "Invalid email or password",
-        type: "error",
-        isLoading: false,
+      // Dismiss the processing toast and show error message
+      toast.dismiss(processingToast);
+      toast.error("Invalid email or password", {
         autoClose: 3000,
-        closeButton: true,
       });
       console.error(error);
     }
