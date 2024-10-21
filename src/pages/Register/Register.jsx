@@ -75,7 +75,7 @@ const Register = () => {
                   <input
                     type="text"
                     {...register("fullName", {
-                      required: "Email Address is required",
+                      required: "Full Name is required",
                     })}
                     aria-invalid={errors.fullName ? "true" : "false"}
                     placeholder="Enter Full Name"
@@ -135,6 +135,11 @@ const Register = () => {
                 >
                   {isEyeOpen ? <IoEyeOff /> : <IoEye />}
                 </div>
+                {errors.password && (
+                  <p className="text-red-600" role="alert">
+                    {errors.password.message}
+                  </p>
+                )}
               </div>
 
               <button

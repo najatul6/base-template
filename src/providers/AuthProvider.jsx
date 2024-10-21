@@ -15,7 +15,7 @@ import {
 } from "firebase/auth";
 import PropTypes from "prop-types";
 
-export const AuthContext = createContext();
+export const AuthContext = createContext(null);
 const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
@@ -35,44 +35,44 @@ const AuthProvider = ({ children }) => {
   // Sign in with Google
   const signInWithGoogle = () => {
     setLoading(true);
-    return signInWithPopup(auth,googleProvider);
+    return signInWithPopup(auth, googleProvider);
   };
 
   // Sign in with Facebook
-  const signInWithFacebook = ()=>{
+  const signInWithFacebook = () => {
     setLoading(true);
     return signInWithPopup(auth, facebookProvider);
-  }
-  
+  };
+
   // Sign in with Github
-  const signInWithGithub = ()=>{
+  const signInWithGithub = () => {
     setLoading(true);
     return signInWithPopup(auth, githubProvider);
-  }
-  
+  };
+
   // Sign in with Twitter
-  const signInWithTwitter = ()=>{
+  const signInWithTwitter = () => {
     setLoading(true);
     return signInWithPopup(auth, twitterProvider);
-  }
+  };
   // Log In With Email and Password
-  const logIn=(email, password)=>{
+  const logIn = (email, password) => {
     setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
-  }
+  };
 
   // Log out
   const logOut = () => {
     setLoading(true);
-    return signOut();
-  }
-  
+    return signOut(auth);
+  };
+
   // Reset Password
   const resetPassword = (email) => {
     setLoading(true);
-    return sendPasswordResetEmail(auth,email);
-  }
-  
+    return sendPasswordResetEmail(auth, email);
+  };
+
   // Auth State Change Listener
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
@@ -100,8 +100,8 @@ const AuthProvider = ({ children }) => {
   );
 };
 
-AuthProvider.propTypes={
-  children: PropTypes.node.isRequired,
-}
+AuthProvider.propTypes = {
+  children: PropTypes.node,
+};
 
 export default AuthProvider;
