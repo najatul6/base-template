@@ -22,18 +22,14 @@ const Register = () => {
   const { createUser } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  // Watch the value of the password field
   const passwordValue = watch("password", "");
 
-  // Handle form submission
   const onSubmit = async (data) => {
     const processingToast = toast.loading("Creating Data...");
     try {
       const result = await createUser(data.email, data.password);
-
-      // If registration is successful, reset form and navigate
       reset();
-      navigate("/"); // Redirect to the home page or another page after successful registration
+      navigate("/");
       toast.update(processingToast, {
         render: "Account Created Successfully!",
         type: "success",
@@ -55,25 +51,23 @@ const Register = () => {
   };
 
   return (
-    <div className="h-screen overflow-hidden relative w-full">
+    <div className="h-screen relative w-full">
       <img
         src={background}
         alt="background"
         className="object-cover w-full h-full fixed inset-0 z-0"
       />
-
-      {/* form */}
       <div className="flex text-white justify-center items-center min-h-screen relative z-10">
         <div className="flex justify-center items-center gap-6 w-11/12 lg:max-w-lg lg:h-[650px] bg-white/5 rounded-xl shadow-xl shadow-black/50 px-4 py-5 lg:py-10">
           <div className="w-full">
-            <div className="flex-center-item-row">
-              <img src={avatar} className="rounded-full w-[100px]" />
+            <div className="flex-center-item-row mb-5">
+              <img src={avatar} className="rounded-full w-[100px] mx-auto" />
             </div>
             <form
               onSubmit={handleSubmit(onSubmit)}
               className="space-y-6 font-[sans-serif] max-w-lg mx-auto"
             >
-              <h1 className="text-3xl text-white uppercase font-bold tracking-[0.25rem] text-center py-5">
+              <h1 className="text-3xl text-white uppercase font-bold tracking-[0.25rem] text-center">
                 Create Account
               </h1>
               <div>
@@ -129,11 +123,9 @@ const Register = () => {
                     })}
                     aria-invalid={errors.password ? "true" : "false"}
                     placeholder="Enter Your Password"
-                    className={`pl-12 text-white placeholder-white px-5 py-3 bg-transparent font-semibold w-full border-b-2 focus:border-[#1076FF] outline-none ${passwordValue? "text-green-600":""}`}
+                    className={`pl-12 text-white placeholder-white px-5 py-3 bg-transparent font-semibold w-full border-b-2 focus:border-[#1076FF] outline-none ${passwordValue ? "text-green-600" : ""}`}
                   />
-                  <RiLockPasswordFill
-                    className={`w-[18px] h-[18px] absolute left-4`}
-                  />
+                  <RiLockPasswordFill className={`w-[18px] h-[18px] absolute left-4`} />
                   <div
                     onClick={() => setIsEyeOpen(!isEyeOpen)}
                     className="w-[18px] h-[18px] absolute right-4 cursor-pointer"
@@ -147,7 +139,6 @@ const Register = () => {
                   </p>
                 )}
               </div>
-
               <button
                 type="submit"
                 className="!mt-8 px-8 py-4 duration-300 text-xl uppercase font-bold text-white bg-black/25 hover:bg-white/15 shadow-inner rounded-full w-full"
