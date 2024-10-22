@@ -30,71 +30,9 @@ const Routes = createBrowserRouter([
                 element: <Home />
             },
             {
-                path: "features",
-                element: <Features />,
-                children: [
-                    {
-                        path: "design",
-                        element: <Design /> 
-                    },
-                    {
-                        path: "management",
-                        element: <FeatureManagement /> 
-                    },
-                    {
-                        path: "navigation",
-                        element: <FeatureNavigation /> 
-                    },
-                    {
-                        path: "cms",
-                        element: <FeatureCMS /> 
-                    },
-                ]
+                path: "/",
+                element: <Home />
             },
-            {
-                path: "resources",
-                element: <Resources />,
-                children: [
-                    {
-                        path: "marketplace",
-                        element: <ResourceMarketplace /> 
-                    },
-                    {
-                        path: "meetups",
-                        element: <ResourceMeetups /> 
-                    },
-                ]
-            },
-            {
-                path: "support",
-                element: <Support />,
-                children: [
-                    {
-                        path: "help",
-                        element: <SupportHelp /> 
-                    },
-                ]
-            },
-            {
-                path: "enterprise",
-                element: <Enterprise />
-            },
-            {
-                path: "about",
-                element: <About />
-            },
-            {
-                path: "contact",
-                element: <Contact />
-            },
-            {
-                path: "pricing",
-                element: <Pricing />
-            },
-            {
-                path: "*",
-                element: <Error /> // Catch-all route for 404
-            }
         ]
     },
     {
