@@ -102,13 +102,13 @@ DesktopMenu.propTypes = {
     gridCols: PropTypes.number,
     name: PropTypes.string.isRequired,
     icon: PropTypes.elementType,
-    path: PropTypes.string, // Add path prop
+    path: PropTypes.string, 
     subMenu: PropTypes.arrayOf(
       PropTypes.shape({
         name: PropTypes.string.isRequired,
         desc: PropTypes.string.isRequired,
         icon: PropTypes.elementType,
-        path: PropTypes.string, // Add path for subMenu items
+        path: PropTypes.string, 
       })
     ),
   }),
