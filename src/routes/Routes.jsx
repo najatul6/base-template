@@ -7,17 +7,6 @@ import Home from "../pages/Home/Home";
 import About from "../pages/About/About";
 import Contact from "../pages/Contact/Contact";
 import Features from "../pages/Features/Features";
-import Pricing from "../pages/Pricing/Pricing";
-import Enterprise from "../pages/Enterprise/Enterprise";
-import Resources from "../pages/Resources/Resources";
-import Support from "../pages/Support/Support";
-import Design from "../pages/Features/Design/Design";
-import FeatureManagement from "../pages/Features/Management/FeatureManagement";
-import FeatureNavigation from "../pages/Features/Navigation/FeatureNavigation";
-import FeatureCMS from "../pages/Features/CMS/FeatureCMS";
-import ResourceMarketplace from "../pages/Resources/Marketplace/ResourceMarketplace";
-import ResourceMeetups from "../pages/Resources/Meetups/ResourceMeetups";
-import SupportHelp from "../pages/Support/Help/SupportHelp";
 
 const Routes = createBrowserRouter([
     {
@@ -30,9 +19,17 @@ const Routes = createBrowserRouter([
                 element: <Home />
             },
             {
-                path: "/",
-                element: <Home />
+                path: "about",
+                element: <About />
             },
+            {
+                path: "contact",
+                element: <Contact />
+            },
+            {
+                path: "services",
+                element: <Features />
+            }
         ]
     },
     {
