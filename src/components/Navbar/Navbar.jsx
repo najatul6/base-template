@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { IoClose, IoMenu } from "react-icons/io5";
 import { routes } from "../../utils/utils";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,19 +35,19 @@ const Navbar = () => {
                     : "translate-y-[-50px] transition-all duration-700"
                 } text-white font-medium text-lg lg:text-xl my-[1.5rem] lg:my-0 mx-0 lg:ml-10 block text-center duration-500 transition lg:translate-y-0 `}
               >
-                <a href={route?.path} className=" px-2 py-3 block">
+                <NavLink to={route?.path} className={`px-2 py-3 block`}>
                   {route?.name}
-                </a>
+                </NavLink>
               </li>
             ))}
           </ul>
         </nav>
-        <a
-          href="/"
+        <Link
+          to="/logIn"
           className="hover:bg-white hover:text-yellow-700 border-2 rounded-xl text-lg lg:text-xl capitalize font-bold text-white px-5 py-2 ml-5 md:ml-[200px] lg:ml-0"
         >
-          Open app
-        </a>
+          Sign In
+        </Link>
       </header>
     </div>
   );
