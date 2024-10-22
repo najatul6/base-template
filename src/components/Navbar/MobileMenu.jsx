@@ -55,7 +55,7 @@ const MobileMenu = ({ Menus }) => {
                   to={path || "#"} // Use path from Menus or fallback to '#'
                   onClick={handleLinkClick} // Close the drawer on link click
                   className={({ isActive }) =>
-                    `flex-center-between p-4 hover:bg-white/5 rounded-md cursor-pointer relative ${isActive ? 'bg-white/10' : ''}`
+                    `flex justify-between items-center p-4 hover:bg-white/5 rounded-md cursor-pointer relative ${isActive ? 'bg-white/10' : ''}`
                   }
                 >
                   {name}

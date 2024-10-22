@@ -9,25 +9,3 @@ body {
   @apply bg-[#111] text-[#D1D5DB] font-inter;
 }
 
-
-/* Utilities Style  */
-@layer utilities {
-  .flex-center {
-    @apply flex items-center;
-  }
-  .flex-center-between {
-    @apply flex justify-between items-center;
-  }
-  .flex-center-item-col {
-    @apply flex flex-col justify-center items-center;
-  }
-  .flex-center-item-row {
-    @apply flex justify-center items-center;
-  }
-  .btn-ctm {
-    @apply bg-[#512da8] py-[10px] px-[45px] font-semibold uppercase mt-[10px] cursor-pointer rounded-lg border border-transparent;
-  }
-  .input{
-    @apply border-none px-[15px] py-[10px] rounded-lg w-full outline-none bg-[#FFF] bg-opacity-5
-  }
-}

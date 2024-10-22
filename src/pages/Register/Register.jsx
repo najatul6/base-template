@@ -60,7 +60,7 @@ const Register = () => {
       <div className="flex text-white justify-center items-center min-h-screen relative z-10">
         <div className="flex justify-center items-center gap-6 w-11/12 lg:max-w-lg lg:h-[650px] bg-white/5 rounded-xl shadow-xl shadow-black/50 px-4 py-5 lg:py-10">
           <div className="w-full">
-            <div className="flex-center-item-row mb-5">
+            <div className="flex justify-center items-center mb-5">
               <img src={avatar} className="rounded-full w-[100px] mx-auto" />
             </div>
             <form

@@ -1,7 +1,7 @@
 
 const Resources = () => {
   return (
-    <div className='flex-center text-7xl min-h-screen'>Resources</div>
+    <div className='flex items-center text-7xl min-h-screen'>Resources</div>
   )
 }
 

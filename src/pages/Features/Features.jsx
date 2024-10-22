@@ -1,7 +1,7 @@
 
 const Features = () => {
   return (
-    <div className='flex-center text-7xl min-h-screen'>Features</div>
+    <div className='flex items-center text-7xl min-h-screen'>Features</div>
   )
 }
 
