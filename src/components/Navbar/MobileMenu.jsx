@@ -96,20 +96,5 @@ const MobileMenu = ({ Menus }) => {
   );
 };
 
-MobileMenu.propTypes = {
-  Menus: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string.isRequired,
-      path: PropTypes.string, // Add path to prop types
-      subMenu: PropTypes.arrayOf(
-        PropTypes.shape({
-          name: PropTypes.string.isRequired,
-          icon: PropTypes.elementType.isRequired,
-          path: PropTypes.string, // Add path to subMenu items
-        })
-      ),
-    })
-  ),
-};
 
 export default MobileMenu;
