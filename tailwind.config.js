@@ -10,6 +10,9 @@ export default {
         inter:["Inter","sans-serif"]
       },
     },
+    colors: {
+      primary:"#007BFF"
+    },
     screens:{
       lg:{min:"925px"},
     }
