@@ -6,7 +6,7 @@
 
 /* BODY STYLE  */
 body {
-  @apply bg-[#111] text-gray-300 font-inter;
+  @apply bg-[#111] text-[#D1D5DB] font-inter;
 }
 
 
