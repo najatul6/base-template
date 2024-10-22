@@ -45,7 +45,6 @@ const MobileMenu = ({ Menus }) => {
         <ul>
           {Menus?.map(({ name, path, subMenu }, idx) => {
             // Check if submenu exists
-            const hasSubMenu = subMenu?.length > 0;
             // Check if the current menu item is clicked
             const isClicked = clicked === idx;
 
