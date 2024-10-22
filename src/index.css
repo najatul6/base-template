@@ -9,11 +9,6 @@ body {
   @apply bg-[#111] text-gray-300 font-inter;
 }
 
-@layer components {
-  .sub-menu {
-    @apply absolute top-[4.2rem] p-[15px] rounded-[6px] origin-[50%_-170px] backdrop-blur bg-white/[0.04];
-  }
-}
 
 /* Utilities Style  */
 @layer utilities {
@@ -33,6 +28,6 @@ body {
     @apply bg-[#512da8] py-[10px] px-[45px] font-semibold uppercase mt-[10px] cursor-pointer rounded-lg border border-transparent;
   }
   .input{
-    @apply border-none px-[15px] py-[10px] rounded-lg w-full outline-none bg-white/5
+    @apply border-none px-[15px] py-[10px] rounded-lg w-full outline-none bg-[#FFF] bg-opacity-5
   }
 }
